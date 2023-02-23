@@ -8,4 +8,4 @@ The Web App is the default structure as added with visual studio - it is essenti
 # Tasks
 
 - Consume the existing endpoint to show the list of cars.
-- Allow the user to add a new car to this list.
+- Allow a new car to be added to this list.
