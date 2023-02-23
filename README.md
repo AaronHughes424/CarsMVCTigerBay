@@ -7,5 +7,6 @@ The Web App is the default structure as added with visual studio - it is essenti
 
 # Tasks
 
-- Consume the existing endpoint to show the list of cars.
-- Allow a new car to be added to this list.
+- Create a page within the Web App. Using the API, display a list of cars on this page.
+- Extend the API so that cars can be added to the list.
+- Create an 'Add Car' page within the Web App which should use the API call you have created.
