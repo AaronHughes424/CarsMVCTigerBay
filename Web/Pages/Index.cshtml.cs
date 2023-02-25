@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
+using API.Models;
 
 namespace Web.Pages
 {
@@ -18,14 +20,16 @@ namespace Web.Pages
             _httpClient = httpClient;
         }
 
+        public List<Car> Cars { get; private set; }
+
         public async Task<IActionResult> OnGetAsync()
         {
             var response = await _httpClient.GetAsync("https://localhost:7259/cars");
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                Debug.WriteLine(content);
-                return Content(content);
+                Cars = JsonConvert.DeserializeObject<List<Car>>(content);
+                return Page();
             }
             else
             {
