@@ -20,5 +20,18 @@ namespace API.Controllers
         {
             return _carRepository.GetCars();
         }
+
+        [HttpPost]
+        [Route("AddCar")]
+        public IActionResult AddCar([FromBody] Car car)
+        {
+            if (car == null)
+            {
+                return BadRequest();
+            }
+
+            _carRepository.AddCar(car);
+            return Ok();
+        }
     }
 }

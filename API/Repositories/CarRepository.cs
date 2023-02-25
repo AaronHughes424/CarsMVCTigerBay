@@ -39,5 +39,9 @@ namespace API.Repositories
         {
             return Cars;
         }
+        public void AddCar(Car car)
+        {
+            Cars.Add(car);
+        }
     }
 }
